@@ -1,0 +1,72 @@
+{
+    "name": "blaze/laravel-model-mcp",
+    "description": "Auto-expose Eloquent models as policy-enforced MCP tools. Safe-by-default CRUD over the Model Context Protocol, gated by your Laravel Policies, scoped to your tenant, and audited.",
+    "keywords": [
+        "laravel",
+        "mcp",
+        "model-context-protocol",
+        "eloquent",
+        "ai",
+        "agents",
+        "authorization",
+        "policy",
+        "multi-tenant"
+    ],
+    "homepage": "https://github.com/blaze-uz/laravel-model-mcp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shaxzodbek Qambaraliyev",
+            "homepage": "https://blaze.uz"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/mcp": "^0.8",
+        "illuminate/console": "^12.41 || ^13.0",
+        "illuminate/contracts": "^12.41 || ^13.0",
+        "illuminate/database": "^12.41 || ^13.0",
+        "illuminate/support": "^12.41 || ^13.0",
+        "spatie/laravel-package-tools": "^1.16",
+        "symfony/finder": "^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "pestphp/pest": "^3.7 || ^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blaze\\ModelMcp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Blaze\\ModelMcp\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test:coverage": "vendor/bin/pest --coverage",
+        "lint": "vendor/bin/pint",
+        "lint:test": "vendor/bin/pint --test",
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Blaze\\ModelMcp\\LaravelModelMcpServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

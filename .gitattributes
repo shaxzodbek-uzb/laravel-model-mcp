@@ -1,0 +1,14 @@
+# Keep the dist tarball lean — development-only paths are export-ignored.
+/.github          export-ignore
+/tests            export-ignore
+/workbench        export-ignore
+/.gitattributes   export-ignore
+/.gitignore       export-ignore
+/.editorconfig    export-ignore
+/phpunit.xml.dist export-ignore
+/phpstan.neon.dist export-ignore
+/pint.json        export-ignore
+/CONTRIBUTING.md  export-ignore
+/SECURITY.md      export-ignore
+
+*.php text eol=lf
