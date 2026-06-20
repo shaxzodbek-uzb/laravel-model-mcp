@@ -1,5 +1,5 @@
 {
-    "name": "blaze/laravel-model-mcp",
+    "name": "shaxzodbek-uzb/laravel-model-mcp",
     "description": "Auto-expose Eloquent models as policy-enforced MCP tools. Safe-by-default CRUD over the Model Context Protocol, gated by your Laravel Policies, scoped to your tenant, and audited.",
     "keywords": [
         "laravel",
@@ -12,7 +12,7 @@
         "policy",
         "multi-tenant"
     ],
-    "homepage": "https://github.com/blaze-uz/laravel-model-mcp",
+    "homepage": "https://github.com/shaxzodbek-uzb/laravel-model-mcp",
     "license": "MIT",
     "authors": [
         {

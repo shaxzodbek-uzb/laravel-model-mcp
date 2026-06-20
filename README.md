@@ -1,11 +1,11 @@
 # Laravel Model MCP
 
 <p>
-    <a href="https://packagist.org/packages/blaze/laravel-model-mcp"><img src="https://img.shields.io/packagist/v/blaze/laravel-model-mcp.svg?style=flat-square" alt="Latest Version on Packagist"></a>
-    <a href="https://github.com/blaze-uz/laravel-model-mcp/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/blaze-uz/laravel-model-mcp/tests.yml?branch=main&label=tests&style=flat-square" alt="Tests"></a>
-    <a href="https://github.com/blaze-uz/laravel-model-mcp/actions/workflows/quality.yml"><img src="https://img.shields.io/github/actions/workflow/status/blaze-uz/laravel-model-mcp/quality.yml?branch=main&label=code%20quality&style=flat-square" alt="Quality"></a>
-    <a href="https://packagist.org/packages/blaze/laravel-model-mcp"><img src="https://img.shields.io/packagist/php-v/blaze/laravel-model-mcp?style=flat-square" alt="PHP Version"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/packagist/l/blaze/laravel-model-mcp.svg?style=flat-square" alt="License"></a>
+    <a href="https://packagist.org/packages/shaxzodbek-uzb/laravel-model-mcp"><img src="https://img.shields.io/packagist/v/shaxzodbek-uzb/laravel-model-mcp.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+    <a href="https://github.com/shaxzodbek-uzb/laravel-model-mcp/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/shaxzodbek-uzb/laravel-model-mcp/tests.yml?branch=main&label=tests&style=flat-square" alt="Tests"></a>
+    <a href="https://github.com/shaxzodbek-uzb/laravel-model-mcp/actions/workflows/quality.yml"><img src="https://img.shields.io/github/actions/workflow/status/shaxzodbek-uzb/laravel-model-mcp/quality.yml?branch=main&label=code%20quality&style=flat-square" alt="Quality"></a>
+    <a href="https://packagist.org/packages/shaxzodbek-uzb/laravel-model-mcp"><img src="https://img.shields.io/packagist/php-v/shaxzodbek-uzb/laravel-model-mcp?style=flat-square" alt="PHP Version"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/packagist/l/shaxzodbek-uzb/laravel-model-mcp.svg?style=flat-square" alt="License"></a>
 </p>
 
 **Expose your Eloquent models to AI agents as MCP tools — without handing them the keys to your database.**
@@ -94,7 +94,7 @@ opinionated, safe-by-default model exposure on top.
 ## Installation
 
 ```bash
-composer require blaze/laravel-model-mcp
+composer require shaxzodbek-uzb/laravel-model-mcp
 ```
 
 Requires PHP 8.2+ and Laravel 12.41+ / 13.x (it relies on `laravel/mcp`'s

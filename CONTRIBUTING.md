@@ -6,7 +6,7 @@ so correctness and tests matter more than features.
 ## Getting started
 
 ```bash
-git clone https://github.com/blaze-uz/laravel-model-mcp
+git clone https://github.com/shaxzodbek-uzb/laravel-model-mcp
 cd laravel-model-mcp
 composer install
 ```
