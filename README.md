@@ -2,8 +2,6 @@
 
 <p>
     <a href="https://packagist.org/packages/shaxzodbek-uzb/laravel-model-mcp"><img src="https://img.shields.io/packagist/v/shaxzodbek-uzb/laravel-model-mcp.svg?style=flat-square" alt="Latest Version on Packagist"></a>
-    <a href="https://github.com/shaxzodbek-uzb/laravel-model-mcp/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/shaxzodbek-uzb/laravel-model-mcp/tests.yml?branch=main&label=tests&style=flat-square" alt="Tests"></a>
-    <a href="https://github.com/shaxzodbek-uzb/laravel-model-mcp/actions/workflows/quality.yml"><img src="https://img.shields.io/github/actions/workflow/status/shaxzodbek-uzb/laravel-model-mcp/quality.yml?branch=main&label=code%20quality&style=flat-square" alt="Quality"></a>
     <a href="https://packagist.org/packages/shaxzodbek-uzb/laravel-model-mcp"><img src="https://img.shields.io/packagist/php-v/shaxzodbek-uzb/laravel-model-mcp?style=flat-square" alt="PHP Version"></a>
     <a href="LICENSE"><img src="https://img.shields.io/packagist/l/shaxzodbek-uzb/laravel-model-mcp.svg?style=flat-square" alt="License"></a>
 </p>
