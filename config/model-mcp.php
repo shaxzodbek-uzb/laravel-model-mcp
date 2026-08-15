@@ -51,10 +51,14 @@ return [
     |
     | The operations exposed for an opted-in model when it does not override
     | them. Each maps to one generated MCP tool. Supported:
-    | list, view, create, update, delete, search.
+    | list, view, create, update, delete, search, describe.
+    |
+    | "describe" returns the model's field metadata (types, writability,
+    | required-on-create) so an agent does not have to guess a shape from a
+    | sample row. It reads no rows, and is still gated on the viewAny ability.
     |
     */
-    'operations' => ['list', 'view', 'create', 'update', 'delete', 'search'],
+    'operations' => ['list', 'view', 'create', 'update', 'delete', 'search', 'describe'],
 
     /*
     |--------------------------------------------------------------------------
