@@ -16,7 +16,7 @@ use InvalidArgumentException;
  */
 final class ModelDescriptor
 {
-    public const OPERATIONS = ['list', 'view', 'create', 'update', 'delete', 'search'];
+    public const OPERATIONS = ['list', 'view', 'create', 'update', 'delete', 'search', 'describe'];
 
     private ?ModelIntrospector $introspector = null;
 

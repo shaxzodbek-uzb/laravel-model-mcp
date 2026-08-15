@@ -70,7 +70,7 @@ Mcp::web('/mcp/models', ModelMcpServer::class)->middleware(['auth:sanctum']);
 ```
 
 That's it. You now have `list_posts`, `get_post`, `create_post`, `update_post`,
-`delete_post`, `search_posts` (and the same for `comment`) — each one running
+`delete_post`, `search_posts`, `describe_post` (and the same for `comment`) — each one running
 `PostPolicy@viewAny`, `@view`, `@create`, `@update`, `@delete` for the
 authenticated user before it touches a row.
 
@@ -152,6 +152,7 @@ php artisan model-mcp:list
 #  update_post   App\Models\Post     update
 #  delete_post   App\Models\Post     delete
 #  search_posts  App\Models\Post     search
+#  describe_post App\Models\Post     describe
 ```
 
 Point any MCP client (Claude, your agent, `php artisan mcp:inspector`) at the
@@ -206,7 +207,7 @@ return [
     ],
 
     // Operations exposed by default for an opted-in model.
-    'operations' => ['list', 'view', 'create', 'update', 'delete', 'search'],
+    'operations' => ['list', 'view', 'create', 'update', 'delete', 'search', 'describe'],
 
     'authorization' => [
         'enabled'                => true,
@@ -243,6 +244,41 @@ Or flip a single global kill-switch so **no** model can ever be mutated — only
 ```php
 'read_only' => true,
 ```
+
+## `describe` — so the agent stops guessing
+
+Without it, the only way for an agent to learn a model's shape is to call `list`
+and read whatever comes back. That needs a row to exist, needs the caller to be
+allowed to see it, and *still* says nothing about which fields are writable,
+which are required, or what a date column expects. Each unknown becomes a failed
+`create` and a retry.
+
+```jsonc
+// describe_post
+{
+  "model": "Post",
+  "key": { "name": "id", "type": "int" },
+  "operations": ["list", "view", "create", "update", "delete", "search", "describe"],
+  "fields": [
+    { "name": "id",     "type": "integer", "writable": false, "primary_key": true, "nullable": false },
+    { "name": "title",  "type": "string",  "writable": true,  "nullable": false, "required_on_create": true },
+    { "name": "status", "type": "string",  "writable": true,  "nullable": true,  "cast": "App\\Enums\\PostStatus" }
+  ],
+  "notes": [
+    "Rows are scoped by \"team_id\"; it is set automatically and cannot be supplied.",
+    "Every operation is still checked against the policy and tenant scope — a field appearing here does not mean the current user may read or write it."
+  ]
+}
+```
+
+It is **metadata only**: it reads the model's schema and this package's config,
+never a row. So it needs no tenant scope and cannot leak data.
+
+It is still gated on `viewAny`, and it hides exactly what every other response
+hides (`$hidden`, `fields.always_hidden`). Which models exist and what columns
+they have is itself information — `describe` must not become the way to discover
+a column the model deliberately hides. Switch it off per model like any other
+operation.
 
 ## Multi-tenancy
 

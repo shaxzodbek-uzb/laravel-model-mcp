@@ -27,6 +27,7 @@ final class ToolFactory
         'update' => UpdateModelTool::class,
         'delete' => DeleteModelTool::class,
         'search' => SearchModelTool::class,
+        'describe' => DescribeModelTool::class,
     ];
 
     public function __construct(

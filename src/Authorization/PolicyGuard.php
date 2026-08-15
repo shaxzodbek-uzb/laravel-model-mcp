@@ -76,7 +76,7 @@ final class PolicyGuard
         $map = $this->config->get('model-mcp.authorization.abilities', []);
 
         return $map[$operation] ?? match ($operation) {
-            'list', 'search' => 'viewAny',
+            'list', 'search', 'describe' => 'viewAny',
             'view' => 'view',
             'create' => 'create',
             'update' => 'update',
