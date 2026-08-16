@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-08-16
+
+### Fixed
+
+- **Declared `illuminate/validation`**, imported by `AbstractModelTool` for
+  `ValidationException`. Unlike the `illuminate/auth` gap fixed in 0.2.1 this one
+  happened to resolve anyway, arriving as a transitive dependency — but a package
+  that works by accident is one dependency-graph change away from not working.
+
 ## [0.2.1] - 2026-08-16
 
 ### Fixed
