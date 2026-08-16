@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-08-16
+
+### Fixed
+
+- **Declared the missing `illuminate/auth` dependency.** `PolicyGuard`,
+  `TenantScope` and `AbstractModelTool` import `Illuminate\Auth\Access\Gate`,
+  `AuthorizationException` and `AuthenticationException`, but the package never
+  listed the component that provides them — so the authorization layer, which is
+  the point of this package, rested on a dependency it did not ask for.
+  A Laravel application pulls in `laravel/framework` and supplies those classes
+  regardless, which is why neither the test suite nor any real installation ever
+  showed it. Installing into a project that composes the `illuminate/*`
+  components individually left all three unresolvable.
+
 ## [0.2.0] - 2026-08-16
 
 ### Added
